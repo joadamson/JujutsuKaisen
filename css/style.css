@@ -307,13 +307,13 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
     transition: .5s;
 }
 
-@media screen and (min-width: 900px){
+@media screen and (max-width: 900px){
     .search form input {
         width: 200px;
     }
 }
 
-@media screen and (min-width: 400px){
+@media screen and (max-width: 400px){
     .search form input {
         width: 100px;
     }
