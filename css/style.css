@@ -317,4 +317,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
     .search form input {
         width: 100px;
     }
+    .sideBar {
+        right: -30px;
+    }
 }
