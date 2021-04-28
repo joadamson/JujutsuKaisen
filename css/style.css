@@ -27,6 +27,7 @@ body {
 .logo {
     list-style: none;
     padding: 0px;
+    margin-left: 20px;
 }
 
 .logo a {
