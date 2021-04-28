@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0px;
+    background: url('https://wallpaperaccess.com/full/5252278.jpg') center / cover no-repeat;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.70);
+}
+
+.nav {
+    width: 100%;
+    display: inline-flex;
+}
+
+.logo {
+    list-style: none;
+    margin-right: auto;
+    padding: 0px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: red;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Bangers', cursive;
+}
+
+.search {
+    padding: 0px;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.search form {  
+    display: inline-flex;
+}
+
+.search form input {
+    width: 400px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    font-family: 'Bangers';
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.sideBar {
+    position: fixed;
+    background: #000;
+    width: 60px;
+    height: 100vh;
+    text-align: center;
+    font-size: 30px;
+    right: -55px;
+    transition: .3s;
+    z-index: 99;
+}
+
+.sideBar:hover {
+    right: 0;
+}
+
+.list {
+    list-style: none;
+    padding: 0px;
+}
+
+.list li {
+    margin: 70px 0px;
+    position: relative;
+}
+
+.list li button i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.list li button {
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
+.list li::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    left: 0;
+    background: rgba(200, 200, 200, .9);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.list li:hover:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background: rgba(200, 200, 200, .3);
+    transition: .5s;
+}
+
+
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 10px 0px;
+    transition: .5s;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transition: .5s;
+    background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.card::before{
+    position: absolute;
+    content: 'Магиче';
+    font-family: 'Nova Square', cursive;
+    top: 10px;
+    left: 22px;
+    font-size: 3em;
+    font-weight: bold;
+    opacity: 0;
+    color: #fff;
+    transition: .5s;
+}
+
+.card::after{
+    position: absolute;
+    content: 'Битва';
+    font-family: 'Nova Square', cursive;
+    bottom: 10px;
+    left: 22px;
+    font-size: 3em;
+    font-weight: bold;
+    opacity: 0;
+    color: #fff;
+    transition: .5s;
+}
+
+.card:hover:before,
+.card:hover:after{
+    opacity: .1;
+}
+
+.card .watch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    transition: .5s;
+    color: #fff;
+    background: red;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Bangers';
+    opacity: 0;
+    z-index: 12;
+    cursor: pointer;
+    border: none;
+}
+
+.card .like {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    transition: .5s;
+    color: #fff;
+    background: red;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Bangers';
+    opacity: 0;
+    z-index: 12;
+    cursor: pointer;
+    border: none;
+}
+
+.card:hover .watch {
+    top: 10px;
+    opacity: 1;
+}
+
+.card:hover .like {
+    bottom: 10px;
+    opacity: 1;
+}
+
+.card .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: .5s;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply,multiply;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px);
+    z-index: 9;
+    opacity: 0;
+}
+
+.card:hover .circle {
+    opacity: 1;
+}
+
+.card .product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 280px;
+    transition: .5s;
+    z-index: 6;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,0px);
+    border-radius: 20px;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+}
+
+.card:hover .product {
+    transform: translate3d(-50%,-50%,100px);
+    opacity: 1;
+}
+
+.adBlock {
+    width: 80%;
+    height: 100px;
+    background: rgba(0,0,0,.8);
+    margin: 20px auto;
+    color: #fff;
+    font-family: 'Nova Square', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: .5s;
+}
+
+.adBlock::before{
+    content: 'Магическая Битва';
+    font-family: 'Bangers';
+    left: 0px;
+    opacity: 0;
+    font-size: 4em;
+    z-index: 9;
+    color: rgba(0,0,0,0.4);
+}
+
+.adBlock::after{
+    content: 'Магическая Битва';
+    font-family: 'Bangers';
+    right: 0px;
+    opacity: 0;
+    font-size: 4em;
+    z-index: 9;
+    color: rgba(0,0,0,0.4);
+}
+
+.adBlock h2 {
+    z-index: 10;
+    transition: .3s;
+}
+
+.adBlock:hover:before,
+.adBlock:hover:after
+{
+    opacity: 1;
+}
+
+.adBlock:hover {
+    background: rgba(200, 200, 200, .8);
+    color: #000;
+    font-family: 'Bangers';
+    transition: .5s;
+}
