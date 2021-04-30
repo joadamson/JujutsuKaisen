@@ -5,26 +5,35 @@ const savedBtn = document.querySelector('.savedBtn');
 const database = JSON.parse(localStorage.getItem('database'));
 
 window.addEventListener('load', () => {
-    const likedCharacters = JSON.parse(localStorage.getItem('likedCharacters'));
-
-    function showCards(arr){
-        const filteredArr = arr.map(item => {
-            return `
-                <div style="background: url('${item.img}') center / cover no-repeat" class="card">
-                    <button onclick="showSingle(${item.id})" class="watch">More</button>
-                    <div style="background: url('${item.img}') center / cover no-repeat" class="circle"></div>
-                    <div class="product"></div>
-                    <button onclick="like(${item.id})" class="like"><i class="fas fa-heart"></i></button>
-                </div>
-            `
-        }).join('');
-    
-        container.innerHTML = filteredArr;
+    const likedCharacters = JSON.parse(localStorage.getItem('database'));
+    let filteredArr;
+    const showLiked = JSON.parse(localStorage.getItem('showLiked'))
+    if(likedCharacters){
+        if(showLiked === true){
+            filteredArr = likedCharacters.filter(item => item.isLiked);
+        }else{
+            filteredArr = likedCharacters.filter(item => item.isLiked === false);
+        }
+        showCards(filteredArr);
+    }else {
+        alert('Нет понравившихся персонажей!');
     }
 
-    showCards(likedCharacters);
-
 });
+function showCards(arr){
+    const filteredArr = arr.map(item => {
+        return `
+            <div style="background: url('${item.img}') center / cover no-repeat" class="card">
+                <button onclick="showSingle(${item.id})" class="watch">More</button>
+                <div style="background: url('${item.img}') center / cover no-repeat" class="circle"></div>
+                <div class="product"></div>
+                <button onclick="like(${item.id})" class="like"><i class="fas fa-heart"></i></button>
+            </div>
+        `
+    }).join('');
+
+    container.innerHTML = filteredArr;
+}
 
 function showSingle(id){
     const filterArr = database.filter(item => item.id === id);
